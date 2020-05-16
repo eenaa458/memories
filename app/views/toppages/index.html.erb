@@ -1,9 +1,18 @@
-<div class="center jumbotron">
-  <div class="text-center">
-    <h2>思い出を記録していこう。</br>
+<% if logged_in? %>
+
+  <p>ログイン完了ユーザ: 
+<%= current_user.name %>
+</p>
+<% else %>
+
+
+  <div class="center jumbotron">
+    <div class="text-center">
+      <h2>思い出を記録していこう。</br>
 それはあなたの生きた証になる。</h2>
 
 <%= link_to 'sign up', signup_path, class: 'btn btn-lg btn-primary' %>
 
+    </div>
   </div>
-</div>
+<% end %>
