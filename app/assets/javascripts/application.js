@@ -10,7 +10,21 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
+//= require moment 
+//= require jquery.slick
+//= require fullcalendar
+//= require fullcalendar/locale-all
 //= require_tree .
+
+
+$(function() {
+  $('.a').slick({
+    dots: true,
+    infinite: true,
+    prevArrow:'<i class="fa fa-angle-left arrow arrow-left"></i>',
+    nextArrow:'<i class="fa fa-angle-right arrow arrow-right"></i>',
+  });
+});

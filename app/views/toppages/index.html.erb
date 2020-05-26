@@ -5,13 +5,13 @@
 <% else %>
 
 
-  <div class="center jumbotron">
-    <div class="text-center">
-      <h2>思い出を記録していこう。</br>
-それはあなたの生きた証になる。</h2>
-
-<%= link_to 'sign up', signup_path, class: 'btn btn-lg btn-primary' %>
-
+  <div class="center jumbotron text-center">
+    <div>
+      <h1>思い出を記録していこう。</br>
+それはあなたの生きた証になる。</h1>
+    </div>
+    <div>
+      <%= link_to 'Sign up Now!', signup_path, class: 'btn btn-primary w-auto' %>
     </div>
   </div>
 <% end %>

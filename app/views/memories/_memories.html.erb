@@ -1,34 +1,49 @@
-<ul class="list-unstyled">
+
+  <ul class="list-unstyled">
   
 <% memories.each do |memory| %>
 
-    <li class="media mb-3">
-      
+    <li class="media mb-3 border border-dark rounded p-2">
       <div class="media-body">
-        <div>
- <span class="text-muted">posted at 
-<%= memory.created_at %>
-</span>
+        <div class="d-flex justify-content-between">
+          <p class="col-5">
+<%= memory.date %>
+</p>
+          <h4 class="offset-2 col-5">
+<%= memory.title %>
+</h4>
         </div>
-        <div>
-          <p>
+        <div class="main a">
+          <ul class="b list-unstyled">
+            
+<% memory.files.each do |file| %>
+            <li class="c">
+  <%= image_tag file %>
+            </li>
+<% end %>
+            
+          </ul>
+          <div>
+            <p>
 <%= memory.content %>
 </p>
-        </div>
-        <div>
+          </div>
+          <div class="text-center">
           
 <% if current_user == memory.user %>
 
-            
-<%= link_to "Delete", memory, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+<%=link_to "edit", edit_memory_path(memory), class: 'btn btn btn-outline-primary btn-sm' %>
+<%= link_to "Delete", memory, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn btn-outline-danger btn-sm' %>
 
           
 <% end %>
 
+          </div>
         </div>
       </div>
     </li>
   
 <% end %>
 
-</ul>
+  </ul>
+

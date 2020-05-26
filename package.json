@@ -1,5 +1,8 @@
 {
   "name": "memories",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@fullcalendar/core": "^4.4.0",
+    "@fullcalendar/daygrid": "^4.4.0"
+  }
 }
