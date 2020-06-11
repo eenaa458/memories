@@ -58,4 +58,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'kaminari'
 gem 'momentjs-rails'
-gem 'magnific-popup-rails', '~> 1.1.0'
+
+group :production do
+  gem 'pg', '>= 0.18', '< 2.0'
+end

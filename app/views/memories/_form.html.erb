@@ -1,4 +1,3 @@
-<div class="container">
 
 <%= form_with(model: @memory, local: true ,id: 'new_memory') do |f| %>
   <% if memory.errors.any? %>
@@ -11,9 +10,9 @@
     </div>
   <% end %>
   
-  <div class="d-flex justify-content-between">
-    <%= link_to "Cancel", :back, {:class=>"btn btn-light"} %>
-    <%= f.submit 'Create new!', class: 'btn btn-primary'%>
+  <div class="row">
+    <%= link_to "Cancel", :back, {:class=>"btn btn-light offset-md-1 col-md-1"} %>
+    <%= f.submit 'Submit', class: 'btn btn-primary offset-md-8 col-md-auto'%>
   </div>
   <div class=" offset-md-2 col-md-8">
     <div class="field mb-4">
@@ -39,4 +38,3 @@
 
 <% end %>
 
-</div>

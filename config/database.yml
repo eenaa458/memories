@@ -49,6 +49,9 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: memories_production
   username: memories
   password: <%= ENV['MEMORIES_DATABASE_PASSWORD'] %>

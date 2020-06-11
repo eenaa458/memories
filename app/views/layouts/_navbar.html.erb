@@ -9,7 +9,7 @@
       <ul class="navbar-nav">
           
 <% if logged_in? %>
-        <li class="nav-item"><%= link_to 'Create new!', new_memory_path, class: 'nav-link btn btn-outline-secondary' %></li>
+        <li class="nav-item"><%= link_to 'Create new!', new_memory_path, class: 'nav-link' %></li>
         <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
 <%= current_user.name %>
