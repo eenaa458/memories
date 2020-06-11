@@ -3,42 +3,38 @@
   
 <% memories.each do |memory| %>
 
-    <li class="media mb-3 border border-dark rounded p-2">
-      <div class="media-body">
-        <div class="d-flex justify-content-between">
-          <p class="col-5">
+    <li class="border border-dark rounded mb-3 p-2">
+      <div class="d-flex justify-content-between">
+        <p class="col-2">
 <%= memory.date %>
 </p>
-          <h4 class="offset-2 col-5">
+        <h4 class="col-auto">
 <%= memory.title %>
 </h4>
-        </div>
-        <div class="main a">
-          <ul class="b list-unstyled">
-            
-<% memory.files.each do |file| %>
-            <li class="c">
-  <%= image_tag file %>
-            </li>
+      </div>
+      <div class="d-flex">
+        <div class="col-9">
+          <ul class="list-unstyled">
+<% memory.images.each do |image| %>
+          
+            <li>
+<%= image_tag(image.url) %>
+</li>
+          
 <% end %>
             
           </ul>
-          <div>
-            <p>
+        </div>
+        <div class="col-3 text-center">
+          <p>
 <%= memory.content %>
 </p>
-          </div>
-          <div class="text-center">
-          
 <% if current_user == memory.user %>
 
-<%=link_to "edit", edit_memory_path(memory), class: 'btn btn btn-outline-primary btn-sm' %>
-<%= link_to "Delete", memory, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn btn-outline-danger btn-sm' %>
+<%=link_to "edit", edit_memory_path(memory), class: 'text-primary' %>
+<%= link_to "Delete", memory, method: :delete, data: { confirm: "You sure?" }, class: 'text-danger' %>
 
-          
 <% end %>
-
-          </div>
         </div>
       </div>
     </li>
@@ -46,4 +42,3 @@
 <% end %>
 
   </ul>
-

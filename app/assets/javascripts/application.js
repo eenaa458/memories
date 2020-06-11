@@ -12,19 +12,32 @@
 //
 //= require jquery
 //= require rails-ujs
-//= require activestorage
+//= require turbolinks
 //= require moment 
-//= require jquery.slick
-//= require fullcalendar
-//= require fullcalendar/locale-all
+//= require magnific-popup
 //= require_tree .
 
+$(function () {
+// 画面遷移を検知
+  $(document).on('turbolinks:load', function () {
+  // lengthを呼び出すことで、#calendarが存在していた場合はtrueの処理がされ、無い場合はnillを返す
+    if ($('#calendar').length) {
+      function eventCalendar() {
+        return $('#calendar').fullCalendar({
+        });
+      };
+      function clearCalendar() {
+        $('#calendar').html('');
+      };
 
-$(function() {
-  $('.a').slick({
-    dots: true,
-    infinite: true,
-    prevArrow:'<i class="fa fa-angle-left arrow arrow-left"></i>',
-    nextArrow:'<i class="fa fa-angle-right arrow arrow-right"></i>',
+      $(document).on('turbolinks:load', function () {
+        eventCalendar();
+      });
+      $(document).on('turbolinks:before-cache', clearCalendar);
+    }
   });
+});
+
+$('.popup').magnificPopup({
+  type: 'image',
 });

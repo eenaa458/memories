@@ -1,0 +1,22 @@
+  <ul class="list-unstyled">
+    
+<% @memories.each do |memory| %>
+
+    <li>
+      <ul class="list-unstyled">
+        
+<% memory.images.each do |image| %>
+
+        <li class="image-gallery__item">
+<%=  link_to image.url, 'data-lightbox': image do %>
+<%= image_tag image.url(:thumb) if image.url.present? %>
+<% end %>
+        </li>
+        
+<% end %>
+      </ul>
+    </li>
+  
+<% end %>
+
+  </ul>

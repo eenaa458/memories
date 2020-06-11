@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  
   root to: 'toppages#index'
+  
+  get 'albums/index' => 'albums#index'
   
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'

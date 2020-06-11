@@ -1,6 +1,6 @@
 <header class="mb-4">
   <nav class="navbar navbar-expand-sm navbar-light bg-light">
-    <a class="navbar-brand" href="/">メモリーズ</a>
+    <a class="navbar-brand" href="/">Memories</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,17 +9,17 @@
       <ul class="navbar-nav">
           
 <% if logged_in? %>
-        <li class="nav-item"><%= link_to '作成', new_memory_path, class: 'nav-link' %></li>
-        <li class="nav-item">カレンダー</li>
-        <li class="nav-item">アルバム</li>
-        
+        <li class="nav-item"><%= link_to 'Create new!', new_memory_path, class: 'nav-link btn btn-outline-secondary' %></li>
         <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
 <%= current_user.name %>
 </a>
             <ul class="dropdown-menu dropdown-menu-right">
               <li class="dropdown-item">
-<%= link_to 'ユーザー編集', user_path(current_user) %>
+<%= link_to 'User Edit', edit_user_path(id: current_user.id) %>
+</li>
+              <li class="dropdown-item">
+<%= link_to 'Album', '/albums/index' %>
 </li>
               <li class="dropdown-divider"></li>
               <li class="dropdown-item"><%= link_to 'Logout', logout_path, method: :delete %></li>

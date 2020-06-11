@@ -12,28 +12,28 @@
   <% end %>
   
   <div class="d-flex justify-content-between">
-    <%= link_to "キャンセル", :back, {:class=>"btn btn-light"} %>
-    <%= f.submit '新規作成', class: 'btn btn-primary'%>
+    <%= link_to "Cancel", :back, {:class=>"btn btn-light"} %>
+    <%= f.submit 'Create new!', class: 'btn btn-primary'%>
   </div>
   <div class=" offset-md-2 col-md-8">
     <div class="field mb-4">
-      <%= f.label :date, '日付：' %></br>
+      <%= f.label :date, 'Date：' %></br>
       <%= f.date_field(:date) %>
     </div>
     
     <div class="form-group">
-      <%= f.label :title, 'タイトル：' %>
+      <%= f.label :title, 'Title：' %>
       <%= f.text_field :title, class: 'form-control'%>
     </div>
   
     <div class="form-group">
-      <%= f.label :content, '内容：' %>
+      <%= f.label :content, 'Content：' %>
       <%= f.text_area :content, class: 'form-control' %>
     </div>
   
     <div class=field>
-      <%= f.label :files, '写真：' %></br>
-      <%= f.file_field :files, multiple: true%>
+      <%= f.label :images, 'Images：' %></br>
+      <%= f.file_field :images, multiple: true%>
     </div>
   </div>
 

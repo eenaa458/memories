@@ -1,0 +1,32 @@
+.image-gallery__item {
+  /* 横に並ぶようにする */
+  display: inline-block;
+
+  /* width, heightがborderを含んだサイズになるようにする */
+  box-sizing: border-box;
+
+  /*width: 120px;*/
+  /*height: 120px;
+
+  /* 白い枠をつける */
+  border: 8px solid #fff;
+
+  /* 影をつける */
+  box-shadow: 4px 4px 6px 1px #ccc;
+
+  margin-left: 9px;
+  margin-right: 9px;
+  margin-bottom: 18px;
+
+  /* 0.1秒かけて値を変化させるエフェクト */
+  -webkit-transition: -webkit-transform 0.1s;
+  transition: -webkit-transform 0.1s;
+  transition: transform 0.1s;
+  transition: transform 0.1s, -webkit-transform 0.1s;
+}
+
+.image-gallery__item:hover {
+  /* 1.1倍に拡大 */
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:show]
+  before_action :set_user, only: [:edit, :update, :destroy]
 
   def new
     @user = User.new
@@ -23,7 +24,14 @@ class UsersController < ApplicationController
   def update
   end
   
+  def destroy
+    
+  end
+  
   private
+  def set_user
+    @user = User.find(params[:id])
+  end
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)

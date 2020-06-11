@@ -41,7 +41,7 @@ class MemoriesController < ApplicationController
   private
 
   def memory_params
-    params.require(:memory).permit(:title, :content, :date, files: [])
+    params.require(:memory).permit(:title, :content, :date, {images: []})
   end
   
   def correct_user
