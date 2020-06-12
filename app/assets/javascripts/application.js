@@ -13,6 +13,5 @@
 //= require jquery
 //= require rails-ujs
 //= require moment 
-//= require magnific-popup
 //= require_tree .
 
