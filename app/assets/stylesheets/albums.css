@@ -5,9 +5,6 @@
   /* width, heightがborderを含んだサイズになるようにする */
   box-sizing: border-box;
 
-  /*width: 120px;*/
-  /*height: 120px;
-
   /* 白い枠をつける */
   border: 8px solid #fff;
 

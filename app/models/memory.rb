@@ -6,6 +6,7 @@ class Memory < ApplicationRecord
   validates :date, presence: true
   validates :images, presence: true
   
+  attr_accessor :images_cache
   mount_uploaders :images, ImageUploader
   serialize :images, JSON
   

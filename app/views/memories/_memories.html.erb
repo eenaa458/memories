@@ -1,46 +1,41 @@
-
-  <ul class="list-unstyled">
+<div class="container">
   
-<% memories.each do |memory| %>
+  <% memories.each do |memory| %>
 
-    <li class="border border-dark rounded mb-3 p-2">
+    <div class="border border-dark rounded mb-2 p-3">
       <div class="d-flex justify-content-between">
-        <p class="col-lg-2">
-<%= memory.date %>
-</p>
-        <h5 class="col-lg-auto">
-<%= memory.title %>
-</h5>
+        <p>
+          <%= memory.date %>
+        </p>
+        <h5 class="text-right">
+          <%= memory.title %>
+        </h5>
       </div>
-      <div class="d-flex">
-        <div class="col-lg-9">
-          <ul class="list-unstyled slides">
-<% memory.images.each do |image| %>
-          
-            <li class="slide-target">
-<%= image_tag(image.url) %>
-</li>
-          
-<% end %>
-            
-          </ul>
+      <div class="row">
+        <div class="col-md-9 slides">
+          <% memory.images.each do |image| %>
+            <div class="slide-target">
+              <%= image_tag (image.url if image.url.present?), :class => "img" %>
+            </div>
+          <% end %>
         </div>
-        <div class="col-lg-3 text-center">
+        <div class="col-md-3 text-center">
           <p>
-<%= memory.content %>
-</p>
-<% if current_user == memory.user %>
-
-<%=link_to "Edit", edit_memory_path(memory), class: 'text-primary' %>
-<%= link_to "Delete", memory, method: :delete, data: { confirm: "You sure?" }, class: 'text-danger' %>
-
-<% end %>
+            <%= memory.content %>
+          </p>
+          <% if current_user == memory.user %>
+            <%=link_to "Edit", edit_memory_path(memory), class: 'text-primary' %>
+            <%= link_to "Delete", memory, method: :delete, data: { confirm: "You sure?" }, class: 'text-danger' %>
+          <% end %>
         </div>
       </div>
-    </li>
+    </div>
+    
+  <% end %>
+
+  <%= paginate memories %>
   
-<% end %>
+</div>
 
-<%= paginate memories %>
 
-  </ul>
+

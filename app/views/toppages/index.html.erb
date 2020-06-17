@@ -1,16 +1,14 @@
 <% if logged_in? %>
 
-<%= render 'memories/memories', memories: @memories %>
+  <%= render 'memories/memories', memories: @memories %>
 
 <% else %>
 
-
-  <div class="center jumbotron text-center">
-    <div>
+  <div class="jumbotron jumbotron-extend">
+    <div class="container-fluid text-center jumbotron-container">
       <h1>I remember it like it was yesterday.</h1>
-    </div>
-    <div>
       <%= link_to 'Sign up Now!', signup_path, class: 'btn btn-primary w-auto' %>
     </div>
   </div>
+  
 <% end %>

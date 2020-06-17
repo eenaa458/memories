@@ -1,3 +1,43 @@
+.jumbotron-extend {
+  position: relative;
+  height: 100vh;
+  min-height: 300px;
+  background: url("/assets/IMGP2998.jpg") no-repeat center center;
+  background-size: cover;
+}
+.jumbotron-container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+}
+
 p {
   word-wrap: break-word;
+}
+
+/*左右の矢印の色を変える*/
+.slick-prev:before,
+.slick-next:before {
+  color: #000;
+}
+/*左右の矢印の位置を変える*/
+.slick-next {
+  right: 5px;
+  z-index: 99;
+}
+.slick-prev {
+  left: 5px;
+  z-index: 100;
+}
+/*スライド数のドットの色を変える*/
+.slick-dots li button:before {
+  color: #fff;
+}
+/*スライド画像の横幅可変*/
+.img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  font-family: 'object-fit: cover;'
 }
