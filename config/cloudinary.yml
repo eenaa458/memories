@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hw7w7wm96
+  api_key: '266596221688957'
+  api_secret: iKDIDh3-gnprx9oZR--isNmaBhA
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: hw7w7wm96
+  api_key: '266596221688957'
+  api_secret: iKDIDh3-gnprx9oZR--isNmaBhA
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: hw7w7wm96
+  api_key: '266596221688957'
+  api_secret: iKDIDh3-gnprx9oZR--isNmaBhA
+  enhance_image_tag: true
+  static_file_support: false
