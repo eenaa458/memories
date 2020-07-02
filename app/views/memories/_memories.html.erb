@@ -13,9 +13,9 @@
       </div>
       <div class="row">
         <div class="col-md-9 slides">
-          <% memory.images.each do |image| %>
+          <% memory.memory_images.each do |i| %>
             <div class="slide-target">
-              <%= image_tag (image.url if image.url.present?), :class => "img" %>
+              <%= cl_image_tag (i.image.url if i.image?) %>
             </div>
           <% end %>
         </div>
@@ -32,10 +32,7 @@
     </div>
     
   <% end %>
-
-  <%= paginate memories %>
   
 </div>
-
 
 

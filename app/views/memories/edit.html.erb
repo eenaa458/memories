@@ -1,1 +1,44 @@
-<%= render 'form', memory: @memory %>
+<%= form_with(url: '/memories/' + @memory_id.to_s, scope: 'memory', method: 'put', local: true ,id: 'new_memory') do |f| %>
+  <% if @memory.errors.any? %>
+    <div id="error_explanation" class="alert alert-warning">
+      <ul class="mb-0">
+        <% @memory.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <%= f.hidden_field :id, value: @memory_id %>
+  
+  <div class="row">
+    <%= link_to "Cancel", :back, {:class=>"btn btn-light offset-md-1 col-md-1"} %>
+    <%= f.submit 'Submit', class: 'btn btn-primary offset-md-8 col-md-auto'%>
+  </div>
+  <div class=" offset-md-2 col-md-8">
+    <div class="field mb-4">
+      <%= f.label :date, 'Date：' %></br>
+      <%= f.date_field(:date, value: @memory.date) %>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :title, 'Title：' %>
+      <%= f.text_field :title, value: @memory.title, class: 'form-control'%>
+    </div>
+  
+    <div class="form-group">
+      <%= f.label :content, 'Content：' %>
+      <%= f.text_area :content, value: @memory.content, class: 'form-control' %>
+    </div>
+  
+    <div class="memory_images-form">
+      <%= f.fields_for :memory_images do |i| %>
+        <%= i.label :memory_images, 'Images：' %></br>
+        <%= i.file_field :image, multiple: true, type: 'file', name: "memory_images[image][]" %>
+        
+      <% end %>
+    </div>
+  </div>
+
+<% end %>
+

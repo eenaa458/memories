@@ -1,11 +1,11 @@
 <div class="container">
     
   <% @memories.each do |memory| %>
-    <% memory.images.each do |image| %>
+    <% memory.memory_images.each do |i| %>
     
       <div class="image-gallery__item">
-        <%= link_to image.url, 'data-lightbox': image do %>
-          <%= image_tag (image.url(:thumb) if image.url.present?) %>
+        <%= link_to i.image.url, 'data-lightbox': i.image do %>
+          <%= image_tag (i.image.url(:thumb) if i.image?) %>
         <% end %>
       </div>
             

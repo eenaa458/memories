@@ -5,6 +5,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Choose what kind of storage to use for this uploader:
   if Rails.env.production?
     include Cloudinary::CarrierWave
+    process :tags => ['memory_images']
   else
     storage :file
   end
@@ -43,7 +44,10 @@ class ImageUploader < CarrierWave::Uploader::Base
   def extension_whitelist
    %w(jpg jpeg gif png)
   end
-
+  
+  def public_id
+    return "local_memories/" + Cloudinary::Utils.random_public_id;
+  end
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
 end
