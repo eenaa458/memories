@@ -3,6 +3,7 @@ class CreateMemories < ActiveRecord::Migration[5.2]
     create_table :memories do |t|
       t.string :title
       t.string :content
+      t.date :date
       t.references :user, foreign_key: true
 
       t.timestamps
