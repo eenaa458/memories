@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_03_040432) do
+ActiveRecord::Schema.define(version: 2020_07_06_094008) do
 
   create_table "memories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 2020_07_03_040432) do
 
   create_table "memory_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image"
-    t.bigint "memory_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "memory_id"
     t.index ["memory_id"], name: "index_memory_images_on_memory_id"
   end
 
