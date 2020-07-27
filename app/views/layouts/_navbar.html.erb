@@ -1,39 +1,38 @@
-<header class="mb-4">
-  <nav class="navbar navbar-expand-sm navbar-light bg-light">
-    <a class="navbar-brand" href="/">Memories</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-          
-        <% if logged_in? %>
-          <li class="nav-item"><%= link_to 'Create new!', new_memory_path, class: 'nav-link' %></li>
-          <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-              <%= current_user.name %>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-right">
-              <li class="dropdown-item">
-                <%= link_to 'User Edit', edit_user_path(id: current_user.id) %>
-              </li>
-              <li class="dropdown-item">
-                <%= link_to 'Album', '/albums/index' %>
-              </li>
-              <li class="dropdown-divider"></li>
-              <li class="dropdown-item"><%= link_to 'Logout', logout_path, method: :delete %></li>
-            </ul>
-          </li>
-        
-        <% else %>
-
-          <li class="nav-item"><%= link_to 'Signup', signup_path, class: 'nav-link' %></li>
-          <li class="nav-item"><%= link_to 'Login', login_path, class: 'nav-link' %></li>
-
-        <% end %>
-
-      </ul>
+<header>
+  <nav class="navbar navbar-expand-md navbar-light fixed-top py-3" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger font-weight-bold" href="#page-top">Memories</a>
+      <button class="navbar-toggler navbar-toggle-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbar-toggler-icon" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto my-2 my-lg-0">
+          <% if logged_in? %>
+            <li class="nav-item"><%= link_to 'Create new!', new_memory_path, class: 'nav-link js-scroll-trigger' %></li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                <%= current_user.name %>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li class="dropdown-item">
+                  <%= link_to 'User Edit', edit_user_path(id: current_user.id) %>
+                </li>
+                <li class="dropdown-item">
+                  <%= link_to 'Album', '/albums/index' %>
+                </li>
+                <li class="dropdown-divider"></li>
+                <li class="dropdown-item"><%= link_to 'Logout', logout_path, method: :delete %></li>
+              </ul>
+            </li>
+          <% else %>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger font-weight-bold" href="#mathead">トップ</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger font-weight-bold" href="#feature">特徴</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger font-weight-bold" href="#howToUse">使い方</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger font-weight-bold" href="#portfolio">ポートフォリオ</a></li>
+            <li class="nav-item"><%= link_to 'ログイン', login_path, class: 'nav-link font-weight-bold' %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </nav>
 </header>

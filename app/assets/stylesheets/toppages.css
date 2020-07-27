@@ -1,20 +1,42 @@
-.jumbotron-extend {
-  position: relative;
-  height: 100vh;
-  min-height: 300px;
-  background: url(/images/IMGP2998.png) no-repeat center center;
-  background-size: cover;
+.navbar-toggler {
+  border-color: black;
+  background-color: white;
 }
-.jumbotron-container {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  color: white;
+
+#mathead:before {
+  background: url("/images/sarandy-westfall-7l8z2pIbHYk-unsplash.jpg") center center / cover no-repeat fixed;
+  content: "";
+  z-index: -1;
+  -webkit-filter: blur(4px);
+  -ms-filter: blur(4px);
+  filter: blur(4px);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container-fluid {
+  min-height: 100vh;
+}
+
+.page-section {
+  min-height: 100vh;
+}
+
+#feature {
+  background-color: #6495ed;
+}
+
+#howToUse {
+  background-color: #f0ffff;
 }
 
 p {
   word-wrap: break-word;
 }
+
 
 /*左右の矢印の色を変える*/
 .slick-prev:before,
