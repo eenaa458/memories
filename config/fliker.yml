@@ -1,0 +1,7 @@
+---
+development:
+  flickr_api_key: ENV['FLICKR_API_KEY']
+production:
+  flickr_api_key: ENV['FLICKR_API_KEY']
+test:
+  flickr_api_key: ENV['FLICKR_API_KEY']

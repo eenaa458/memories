@@ -16,6 +16,8 @@ require "sprockets/railtie"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+Dotenv::Railtie.load
+p ENV['Flickr_API_KEY'] 
 
 module Memories
   class Application < Rails::Application

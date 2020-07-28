@@ -59,6 +59,7 @@ gem 'cloudinary'
 gem 'mini_magick'
 gem 'kaminari'
 gem 'momentjs-rails'
+gem 'gon'
 gem 'dotenv-rails'
 
 group :production do
