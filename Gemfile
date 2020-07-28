@@ -59,6 +59,7 @@ gem 'cloudinary'
 gem 'mini_magick'
 gem 'kaminari'
 gem 'momentjs-rails'
+gem 'dotenv-rails'
 
 group :production do
   gem 'pg', '>= 0.18', '< 2.0'
