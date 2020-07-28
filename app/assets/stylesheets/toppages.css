@@ -1,3 +1,36 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: #000;
+  background-color: #fff;
+}
+
+.image-gallery {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  max-width: 1024px;
+}
+
+.image-gallery__item {
+  display: inline-block;
+  box-sizing: border-box;
+  border: 8px solid #fff;
+  box-shadow: 4px 4px 6px 1px #ccc;
+  margin-left: 9px;
+  margin-right: 9px;
+  margin-bottom: 18px;
+  -webkit-transition: -webkit-transform 0.1s;
+  transition: -webkit-transform 0.1s;
+  transition: transform 0.1s;
+  transition: transform 0.1s, -webkit-transform 0.1s;
+}
+
+.image-gallery__item:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
 .navbar-toggler {
   border-color: black;
   background-color: white;
@@ -30,7 +63,17 @@
 }
 
 #howToUse {
+  background-color: #d1edfb;
+}
+
+#gallery {
   background-color: #f0ffff;
+}
+
+footer {
+  padding: 50px 0;
+  background-color: #fafaf3;
+  text-align: center;
 }
 
 p {
@@ -45,11 +88,11 @@ p {
 }
 /*左右の矢印の位置を変える*/
 .slick-next {
-  right: 5px;
+  right: -3px;
   z-index: 99;
 }
 .slick-prev {
-  left: 5px;
+  left: -3px;
   z-index: 100;
 }
 /*スライド数のドットの色を変える*/

@@ -7,11 +7,11 @@
   <section class="page-section" id="mathead">
     <div class="container-fluid h-100 d-flex justify-content-center align-items-center text-center">
       <div>
-        <h1 class="text-uppercase font-weight-bold">I remember it like it was yesterday.</h1>
+        <h1 class="text-uppercase text-white font-weight-bold">I remember it like it was yesterday.</h1>
         <hr class="divider my-4">
         <div class="col-lg-10 offset-lg-1">
-          <p class="font-weight-bold mb-5">「メモリーズ」は、大切な思い出を写真と共に保管するウェブサービスです。</br>さあ、あなただけのアルバムを作りましょう！</p>
-          <%= link_to '新規登録はこちら', signup_path, class: 'btn btn-primary btn-xl js-scroll-trigger' %>
+          <p class="font-weight-bold text-white mb-5">「メモリーズ」は、大切な思い出を写真と共に保管するウェブサービスです。</br>さあ、あなただけのアルバムを作りましょう！</p>
+          <%= link_to '新規登録はこちら', signup_path, class: 'btn btn-primary btn-lg js-scroll-trigger' %>
         </div>
       </div>
     </div>
@@ -20,18 +20,18 @@
   <section class="page-section bg-promary" id="feature">
     <div class="container-fluid h-100 d-flex justify-content-center align-items-center text-center">
       <div>
-        <h2 class="text-white">アルバムをよりスタイリッシュに</h2>
+        <h2 class="text-white">あなたのアルバムをよりスタイリッシュに</h2>
         <hr class="divider light my-4">
         <p class="text-white mb-4">「メモリーズ」は、スタイリッシュなデザインを心がけて作られています。</br>そのシンプルかつ無駄のないデザイン・機能によって、思い出を振り返る時の見やすさが特徴です。</p>
-        <a class="btn btn-light btn-xl js-scroll-trigger">Get Started!</a>
+        <a class="btn btn-light btn-xl js-scroll-trigger" href="#howToUse">Get Started!</a>
       </div>
     </div>
   </section>
   <!-- How to Use-->
   <section class="page-section" id="howToUse">
-    <div class="container-fluid h-100 d-flex justify-content-center align-items-center text-center">
+    <div class="container-fluid h-100 d-flex justify-content-center align-items-center text-center p-5">
       <div>
-        <h2 class="text-center mt-0">使用方法</h2>
+        <h2>使用方法</h2>
         <hr class="divider my-4">
         <div class="row text-center">
           <div class="mt-5 col-lg-4">
@@ -44,7 +44,7 @@
             <h3 class="h4 mb-2">メモリーの新規作成</h3>
             <p class="text-muted mb-0">ナビバーの"Create New!"ボタンを押し、メモリー内容を記述してください。</br>＊日付、タイトル、内容、写真の全ての項目を埋めないとメモリーが保存されません。</p>
           </div>
-          <div class="mt-5 col-lg-4">
+          <div class="my-5 col-lg-4">
             <i class="fas fa-4x  fa-camera-retro text-primary mb-4"></i>
             <h3 class="h4 mb-2">思い出を振り返る</h3>
             <p class="text-muted mb-0">トップページには今までのメモリーが一覧表示されます。</br>各メモリーに編集ボタンと消去ボタンが設置されています。</p>
@@ -53,4 +53,16 @@
       </div>
     </div>
   </section>
+  <!-- gallery-->
+  <section class="page-section" id="gallery">
+    <div class="container-fluid h-100 d-flex justify-content-center align-items-center text-center p-5">
+      <div class="gallery">
+        <h2 class="text-center">ギャラリー</h2>
+        <hr class="divider my-4">
+      </div>
+    </div>
+  </section>
+  <footer>
+    &copy; 2020 Memories
+  </footer>
 <% end %>

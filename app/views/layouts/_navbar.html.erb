@@ -1,14 +1,15 @@
 <header>
-  <nav class="navbar navbar-expand-md navbar-light fixed-top py-3" id="mainNav">
+  <nav class="navbar navbar-expand-md navbar-light bg-light py-3" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger font-weight-bold" href="#page-top">Memories</a>
+      <a class="navbar-brand js-scroll-trigger font-weight-bold" href="/">Memories</a>
       <button class="navbar-toggler navbar-toggle-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbar-toggler-icon" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
           <% if logged_in? %>
-            <li class="nav-item"><%= link_to 'Create new!', new_memory_path, class: 'nav-link js-scroll-trigger' %></li>
+            <li class="nav-item"><%= link_to 'Create new!', new_memory_path, class: 'nav-link font-weight-bold js-scroll-trigger' %></li>
+            <li class="nav-item"><%= link_to 'Album', '/albums/index', class: 'nav-link js-scroll-trigger' %></li>
             <li class="nav-item dropdown">
               <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                 <%= current_user.name %>
@@ -17,9 +18,6 @@
                 <li class="dropdown-item">
                   <%= link_to 'User Edit', edit_user_path(id: current_user.id) %>
                 </li>
-                <li class="dropdown-item">
-                  <%= link_to 'Album', '/albums/index' %>
-                </li>
                 <li class="dropdown-divider"></li>
                 <li class="dropdown-item"><%= link_to 'Logout', logout_path, method: :delete %></li>
               </ul>
@@ -27,8 +25,8 @@
           <% else %>
             <li class="nav-item"><a class="nav-link js-scroll-trigger font-weight-bold" href="#mathead">トップ</a></li>
             <li class="nav-item"><a class="nav-link js-scroll-trigger font-weight-bold" href="#feature">特徴</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger font-weight-bold" href="#howToUse">使い方</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger font-weight-bold" href="#portfolio">ポートフォリオ</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger font-weight-bold" href="#howToUse">使用方法</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger font-weight-bold" href="#gallery">ギャラリー</a></li>
             <li class="nav-item"><%= link_to 'ログイン', login_path, class: 'nav-link font-weight-bold' %></li>
           <% end %>
         </ul>
