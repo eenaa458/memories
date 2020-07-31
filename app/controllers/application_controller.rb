@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
       redirect_to login_url
     end
   end
+  
+  def counts(user)
+    @count_memories = user.memories.count
+  end
 end

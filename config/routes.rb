@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  
   root to: 'toppages#index'
   
   get 'albums/index' => 'albums#index'
@@ -10,6 +9,6 @@ Rails.application.routes.draw do
   
   get 'signup', to: 'users#new'
   
-  resources :users, only: [:new, :create, :edit, :update]
+  resources :users
   resources :memories, only: [:new, :create, :edit, :update, :destroy]
 end

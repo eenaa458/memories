@@ -1,13 +1,11 @@
-<div class="container mt-1">
-  
+<div class="container">
   <% memories.each do |memory| %>
-
     <div class="border border-dark rounded mb-2 p-3">
       <div class="d-flex justify-content-between">
         <p>
           <%= memory.date %>
         </p>
-        <h5 class="text-right">
+        <h5>
           <%= memory.title %>
         </h5>
       </div>
@@ -30,9 +28,8 @@
         </div>
       </div>
     </div>
-    
   <% end %>
-  
+  <%= paginate memories %>
 </div>
 
 

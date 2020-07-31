@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-expand-md navbar-light bg-light py-3" id="mainNav">
+  <nav class="navbar navbar-expand-md navbar-light bg-light py-3 mb-1" id="mainNav">
     <div class="container">
       <a class="navbar-brand js-scroll-trigger font-weight-bold" href="/">Memories</a>
       <button class="navbar-toggler navbar-toggle-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbar-toggler-icon" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,6 +15,9 @@
                 <%= current_user.name %>
               </a>
               <ul class="dropdown-menu dropdown-menu-right">
+                <li class="dropdown-item">
+                  <%= link_to 'My profile', user_path(current_user) %>
+                </li>
                 <li class="dropdown-item">
                   <%= link_to 'User Edit', edit_user_path(id: current_user.id) %>
                 </li>

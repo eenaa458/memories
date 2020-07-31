@@ -1,7 +1,17 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:show]
-  before_action :set_user, only: [:edit, :update]
-
+  before_action :require_user_logged_in, only: [:index, :show, :edit, :update, :destroy]
+  before_action :set_user, only: [:edit, :update, :destroy]
+  
+  def index
+    @users = User.order(id: :desc).page(params[:page]).per(25)
+  end
+  
+  def show
+    @user = User.find(params[:id])
+    @memories = current_user.memories.order(date: :desc).page(params[:page]).per(8)
+    counts(@user)
+  end
+  
   def new
     @user = User.new
   end
@@ -22,6 +32,12 @@ class UsersController < ApplicationController
   end
 
   def update
+  end
+  
+  def destroy
+    @user.destroy
+    flash[:success] = '退会しました'
+    redirect_back(fallback_location: root_path)
   end
   
   private
