@@ -16,4 +16,5 @@ Rails.application.routes.draw do
     end
   end
   resources :memories, only: [:new, :create, :edit, :update, :destroy]
+  resources :relationships, only: [:create, :destroy]
 end
