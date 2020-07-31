@@ -9,6 +9,11 @@ Rails.application.routes.draw do
   
   get 'signup', to: 'users#new'
   
-  resources :users
+  resources :users do
+    member do
+      get :followings
+      get :followers
+    end
+  end
   resources :memories, only: [:new, :create, :edit, :update, :destroy]
 end

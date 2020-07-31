@@ -13,7 +13,7 @@
       <%= link_to "Cancel", :back, {:class=>"btn btn-light"} %>
       <%= f.submit 'Submit', class: 'btn btn-primary'%>
     </div>
-    <div class=" offset-md-2 col-md-8">
+    <div class=" offset-md-1 col-md-10">
       <div class="field mb-4">
         <%= f.label :date, 'Date：' %></br>
         <%= f.date_field(:date) %>
@@ -26,13 +26,14 @@
         <%= f.label :content, 'Content：' %>
         <%= f.text_area :content, class: 'form-control' %>
       </div>
-      <div class="memory_images-form mb-2">
+      <div class="memory_images-form">
         <%= f.fields_for :memory_images do |i| %>
           <%= i.label :memory_images, 'Images：' %></br>
           <%= i.file_field :image, multiple: true, type: 'file', name: "memory_images[image][]" %>
         <% end %>
+        <p>＊'Ctrl'を押しながらクリックすると、画像を複数選択できます。</p>
       </div>
-      <div class="caution">
+      <div class="caution mt-4">
       ＊全ての項目を埋めないとメモリーが記録されません。
       </div>
     </div>

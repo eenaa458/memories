@@ -9,14 +9,15 @@
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
           <% if logged_in? %>
             <li class="nav-item"><%= link_to 'Create new!', new_memory_path, class: 'nav-link font-weight-bold js-scroll-trigger' %></li>
-            <li class="nav-item"><%= link_to 'Album', '/albums/index', class: 'nav-link js-scroll-trigger' %></li>
+            <li class="nav-item"><%= link_to 'Album', albums_index_path, class: 'nav-link js-scroll-trigger' %></li>
+            <li class="nav-item"><%= link_to 'Users', users_path, class: 'nav-link js-scroll-trigger' %></li>
             <li class="nav-item dropdown">
               <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                 <%= current_user.name %>
               </a>
               <ul class="dropdown-menu dropdown-menu-right">
                 <li class="dropdown-item">
-                  <%= link_to 'My profile', user_path(current_user) %>
+                  <%= link_to 'My profile', user_path(id: current_user.id) %>
                 </li>
                 <li class="dropdown-item">
                   <%= link_to 'User Edit', edit_user_path(id: current_user.id) %>

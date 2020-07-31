@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @memories = current_user.memories.order(date: :desc).page(params[:page]).per(8)
+    @memories = @user.memories.order(date: :desc).page(params[:page]).per(8)
     counts(@user)
   end
   
@@ -40,7 +40,20 @@ class UsersController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
   
+  def followings
+    @user = User.find(params[:id])
+    @followings = @user.followings.page(params[:page])
+    counts(@user)
+  end
+  
+  def followers
+    @user = User.find(params[:id])
+    @followers = @user.followers.page(params[:page])
+    counts(@user)
+  end
+  
   private
+  
   def set_user
     @user = User.find(params[:id])
   end

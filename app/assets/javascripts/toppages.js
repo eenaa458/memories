@@ -93,7 +93,3 @@ $.getJSON(url, (data) => {
 $(function() {
   $('.slides').slick();
 });
-
-$(function (){
-  objectFitImages()
-});

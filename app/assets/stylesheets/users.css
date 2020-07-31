@@ -1,0 +1,29 @@
+p {
+  word-wrap: break-word;
+}
+
+/*左右の矢印の色を変える*/
+.slick-prev:before,
+.slick-next:before {
+  color: #000;
+}
+/*左右の矢印の位置を変える*/
+.slick-next {
+  right: -3px;
+  z-index: 99;
+}
+.slick-prev {
+  left: -3px;
+  z-index: 100;
+}
+/*スライド数のドットの色を変える*/
+.slick-dots li button:before {
+  color: #fff;
+}
+/*スライド画像の横幅可変*/
+.img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  font-family: 'object-fit: cover;'
+}

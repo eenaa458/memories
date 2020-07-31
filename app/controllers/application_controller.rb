@@ -12,5 +12,7 @@ class ApplicationController < ActionController::Base
   
   def counts(user)
     @count_memories = user.memories.count
+    @count_followings = user.followings.count
+    @count_followers = user.followers.count
   end
 end
