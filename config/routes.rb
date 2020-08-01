@@ -13,8 +13,10 @@ Rails.application.routes.draw do
     member do
       get :followings
       get :followers
+      get :addings
     end
   end
   resources :memories, only: [:new, :create, :edit, :update, :destroy]
   resources :relationships, only: [:create, :destroy]
+  resources :add_memories, only: [:create, :destroy]
 end

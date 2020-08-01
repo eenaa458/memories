@@ -54,7 +54,7 @@ $.getJSON(url, (data) => {
 
   // 空の<div>を作る
   const $div = $('<div>').addClass('image-gallery');
-  
+
   for (let i = 0; i < data.photos.photo.length; i++) {
     const photo = data.photos.photo[i];
     const photoText = getFlickrText(photo);
@@ -91,5 +91,5 @@ $.getJSON(url, (data) => {
 });
 
 $(function() {
-  $('.slides').slick();
+  $('.slides').not('.slick-initialized').slick();
 });

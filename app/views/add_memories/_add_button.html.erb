@@ -1,0 +1,25 @@
+<% unless current_user.memories.include?(memory) %>
+
+<% if current_user.adding?(memory) %>
+
+  <%= form_with(model: current_user.add_memories.find_by(memory_id: memory.id), local: true, method: :delete) do |f| %>
+
+    <%= hidden_field_tag :memory_id, memory.id %>
+
+    <%= f.submit 'メモリーの追加をやめる', class: 'text-danger' %>
+
+  <% end %>
+
+<% else %>
+
+  <%= form_with(model: current_user.add_memories.build, local: true) do |f| %>
+
+    <%= hidden_field_tag :memory_id, memory.id %>
+
+    <%= f.submit 'メモリーを追加する', class: 'text-primary' %>
+
+  <% end %>
+
+<% end %>
+
+<% end %>

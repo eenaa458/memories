@@ -25,6 +25,9 @@
             <%=link_to "Edit", edit_memory_path(memory), class: 'text-primary' %>
             <%= link_to "Delete", memory, method: :delete, data: { confirm: "You sure?" }, class: 'text-danger' %>
           <% end %>
+          <p>
+            <%= render 'add_memories/add_button', memory: memory %>
+          </p>
         </div>
       </div>
     </div>

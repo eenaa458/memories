@@ -27,4 +27,26 @@ class User < ApplicationRecord
   def following?(other_user)
     self.followings.include?(other_user)
   end
+  
+  has_many :add_memories, dependent: :destroy
+  has_many :addings, through: :add_memories, source: :memory
+
+  def add(memory)
+    unless self.memories.include?(memory)
+      self.add_memories.find_or_create_by(memory_id: memory.id)
+    end
+  end
+  
+  def not_add(memory)
+    added_memory = self.add_memories.find_by(memory_id: memory.id)
+    added_memory.destroy if added_memory
+  end
+  
+  def adding?(memory)
+    self.addings.include?(memory)
+  end
+  
+  def feed_memories
+    Memory.where(id: self.memories + self.addings)
+  end
 end

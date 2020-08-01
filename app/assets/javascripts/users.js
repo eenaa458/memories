@@ -1,3 +1,3 @@
 $(function() {
-  $('.slides').slick();
+  $('.slides').not('.slick-initialized').slick();
 });

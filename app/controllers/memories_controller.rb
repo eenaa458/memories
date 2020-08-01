@@ -19,7 +19,7 @@ class MemoriesController < ApplicationController
       
       redirect_to root_url
     else
-      @memories = current_user.memories.order(date: :desc).page(params[:page]).per(8)
+      @memories = current_user.feed_memories.order(date: :desc).page(params[:page]).per(8)
       flash.now[:danger] = 'メモリーの記録に失敗しました。'
       render 'toppages/index'
     end
