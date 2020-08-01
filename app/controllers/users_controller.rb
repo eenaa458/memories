@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @memories = @user.feed_memories.order(date: :desc).page(params[:page]).per(8)
+    @total_memories = Memory.where(id: @user.memories + @user.addings)
+    @memories = @total_memories.order(date: :desc).page(params[:page]).per(8)
     counts(@user)
   end
   

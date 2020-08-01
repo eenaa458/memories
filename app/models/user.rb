@@ -46,7 +46,4 @@ class User < ApplicationRecord
     self.addings.include?(memory)
   end
   
-  def feed_memories
-    Memory.where(id: self.memories + self.addings)
-  end
 end
