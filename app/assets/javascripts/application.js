@@ -15,6 +15,11 @@
 //= require moment 
 //= require_tree .
 
+
 $(function(){
-  setTimeout("$('.alert').fadeOut('slow')", 3000); 
-})
+  setTimeout("$('.alert').fadeOut('slow')", 8000); 
+});
+
+$(function() {
+  $('.slides').not('.slick-initialized').slick();
+});

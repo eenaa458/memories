@@ -1,5 +1,6 @@
 <% if logged_in? %>
-
+  
+  <!-- メモリー一覧-->
   <%= render 'memories/memories', memories: @memories %>
 
 <% else %>
@@ -11,7 +12,12 @@
         <hr class="divider my-4">
         <div class="col-lg-10 offset-lg-1">
           <p class="font-weight-bold text-white mb-5">「メモリーズ」は、大切な思い出を写真と共に保管するウェブサービスです。</br>さあ、あなただけのアルバムを作りましょう！</p>
-          <%= link_to '新規登録はこちら', signup_path, class: 'btn btn-primary btn-lg js-scroll-trigger' %>
+          <%= link_to '新規登録はこちら', signup_path, class: 'btn btn-primary w-50' %>
+          <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+            <%= f.hidden_field :email ,:value => 'test@example.com' %>
+            <%= f.hidden_field :password ,:value => 'test0123456789' %>
+            <%= f.submit 'ゲストログインはこちら', class: 'btn btn-success w-50 mt-2' %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -37,7 +43,7 @@
           <div class="mt-5 col-lg-4">
             <i class="fas fa-4x fa-door-open text-primary mb-4"></i>
             <h3 class="h4 mb-2"><%= link_to '新規登録', signup_path %> or <%= link_to 'ログイン', login_path %></h3>
-            <p class="text-muted mb-0">お名前、メールアドレス、パスワードを埋めてください。</br>＊パスワードは暗号化されますのでご安心ください。</p>
+            <p class="text-muted mb-0">お名前、メールアドレス、パスワードの欄を埋めて、"Submit"ボタンを押してください。</p>
           </div>
           <div class="mt-5 col-lg-4">
             <i class="fas fa-4x fa-user-plus text-primary mb-4"></i>
@@ -62,6 +68,7 @@
       </div>
     </div>
   </section>
+  <!-- footer-->
   <footer>
     &copy; 2020 Memories
   </footer>

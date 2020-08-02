@@ -90,6 +90,3 @@ $.getJSON(url, (data) => {
   $('[data-toggle="tooltip"]').tooltip();
 });
 
-$(function() {
-  $('.slides').not('.slick-initialized').slick();
-});

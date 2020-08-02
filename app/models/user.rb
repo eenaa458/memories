@@ -45,5 +45,4 @@ class User < ApplicationRecord
   def adding?(memory)
     self.addings.include?(memory)
   end
-  
 end

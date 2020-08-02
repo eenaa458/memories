@@ -4,4 +4,4 @@
 
 <%= render 'form', user: @user %>
 
-<p class="mt-3 text-center">退会の方は<%= link_to "こちら", @user, method: :delete, data: { confirm: "You sure?" }, class: 'text-danger' %></p>
+<p class="mt-3 text-center">退会の方は<%= link_to "こちら", @user, method: :delete, data: { confirm: "本当によろしいですか？" }, class: 'text-danger' %></p>

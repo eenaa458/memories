@@ -15,7 +15,10 @@
  */
 
 body {
+  margin: 0;
+  padding: 0;
   color: #000;
   background-color: #fff;
   font-family: 'Architects Daughter', cursive;
+  word-wrap: break-word;
 }
